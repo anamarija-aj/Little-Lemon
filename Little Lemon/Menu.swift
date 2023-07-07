@@ -20,10 +20,19 @@ struct Menu: View {
         FetchedObjects() { (dishes: [Dish]) in
             List {
                 ForEach(dishes) { dish in
+                    
+                    let dishTitle = dish.title ?? ""
+                    let dishPrice = dish.price ?? ""
+                    
+                    let dishImage = dish.image ?? ""
+                    let imageUrl = URL(string: dishImage)
+                    
                     HStack {
-                        Text("\(dish.title ?? "") - \(dish.price ?? "")")
-                        AsyncImage(url: URL(string: dish.image ?? ""))
-                            .aspectRatio(contentMode: .fit)
+                        Text("\(dishTitle) $ \(dishPrice)")
+                        AsyncImage(url: imageUrl) { image in
+                            
+                        }
+                            
                     }
                 }
             }
