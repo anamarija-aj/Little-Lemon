@@ -17,27 +17,42 @@ struct Menu: View {
             Text("Chicago")
             Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
             
-        FetchedObjects() { (dishes: [Dish]) in
-            List {
-                ForEach(dishes) { dish in
-                    
-                    let dishTitle = dish.title ?? ""
-                    let dishPrice = dish.price ?? ""
-                    
-                    let dishImage = dish.image ?? ""
-                    let imageUrl = URL(string: dishImage)
-                    
-                    HStack {
-                        Text("\(dishTitle) $ \(dishPrice)")
-                        AsyncImage(url: imageUrl) { image in
+            FetchedObjects() { (dishes: [Dish]) in
+                List {
+                    ForEach(dishes) { dish in
+                        
+                        let dishTitle = dish.title ?? ""
+                        let dishPrice = dish.price ?? ""
+                        
+                        let dishImage = dish.image ?? ""
+                        
+                        
+                        HStack {
+                            
+                            HStack {
+                                Text(dishTitle)
+                                Spacer()
+                                Text("$ \(dishPrice)")
+                            }.padding(10)
+                            
+                            Spacer()
+                            AsyncImage(url: URL(string: dishImage)) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            .frame(width: 150, height: 150, alignment: .center)
+                            
                             
                         }
-                            
+                        
                     }
                 }
+                
             }
-            
-        }
             
             
         }
