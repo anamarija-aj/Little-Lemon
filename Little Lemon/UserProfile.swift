@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct UserProfile: View {
+    
+    let firstName = UserDefaults.standard.string(forKey: "kFirstName") ?? ""
+    let lastName = UserDefaults.standard.string(forKey: "kLastName") ?? ""
+    let email = UserDefaults.standard.string(forKey: "kEmail") ?? ""
+
+    
     var body: some View {
         VStack {
             Text("Personal information")
             Image("profile-image-placeholder")
+            Text(firstName)
+            Text(lastName)
+            Text(email)
         }
     }
 }
