@@ -11,11 +11,15 @@ struct Menu: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
+    @State var searchText = ""
+    
     var body: some View {
         VStack {
             Text("Little Lemon")
             Text("Chicago")
             Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
+            
+            TextField("Search menu", text: $searchText)
             
             FetchedObjects(sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                 List {
