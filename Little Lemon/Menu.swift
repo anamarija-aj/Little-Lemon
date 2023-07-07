@@ -17,7 +17,7 @@ struct Menu: View {
             Text("Chicago")
             Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
             
-            FetchedObjects() { (dishes: [Dish]) in
+            FetchedObjects(sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                 List {
                     ForEach(dishes) { dish in
                         
@@ -92,6 +92,12 @@ struct Menu: View {
         task.resume()
         
     }
+    
+    func buildSortDescriptors() -> [NSSortDescriptor] {
+        return [NSSortDescriptor(key: "title", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))]
+    }
+    
+    
 }
 
 struct Menu_Previews: PreviewProvider {
