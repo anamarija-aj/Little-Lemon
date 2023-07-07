@@ -54,7 +54,7 @@ struct Onboarding: View {
                 
                 
             }
-            .onAppear() {
+            .onAppear {
                 if (UserDefaults.standard.bool(forKey: "kIsLoggedIn")) {
                     isLoggedIn = true
                 }

@@ -18,6 +18,24 @@ struct Menu: View {
                 
             }
         }
+        .onAppear {
+            getMenuData()
+        }
+    }
+    
+    func getMenuData() {
+        let urlString = "https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu.json"
+        
+        let url = URL(string: urlString)!
+        
+        let request = URLRequest(url: url)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            // TODO: handle response
+        }
+        
+        task.resume()
+        
     }
 }
 
