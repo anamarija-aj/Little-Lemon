@@ -14,6 +14,8 @@
 		3F6D43FF2A58188C0069CFFB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D43FE2A58188C0069CFFB /* Home.swift */; };
 		3F6D44012A5818D70069CFFB /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D44002A5818D70069CFFB /* Menu.swift */; };
 		3F6D44032A581ED50069CFFB /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D44022A581ED50069CFFB /* UserProfile.swift */; };
+		3F6D44062A583EB30069CFFB /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D44042A583EB30069CFFB /* FetchedObjects.swift */; };
+		3F6D44072A583EB30069CFFB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D44052A583EB30069CFFB /* Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		3F6D43FE2A58188C0069CFFB /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		3F6D44002A5818D70069CFFB /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		3F6D44022A581ED50069CFFB /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		3F6D44042A583EB30069CFFB /* FetchedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
+		3F6D44052A583EB30069CFFB /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				3F1E42732A576C6F0065E4B3 /* Little_LemonApp.swift */,
+				3F6D44042A583EB30069CFFB /* FetchedObjects.swift */,
+				3F6D44052A583EB30069CFFB /* Persistence.swift */,
 				3F6D44022A581ED50069CFFB /* UserProfile.swift */,
 				3F6D43FC2A5810AE0069CFFB /* Onboarding.swift */,
 				3F6D43FE2A58188C0069CFFB /* Home.swift */,
@@ -148,6 +154,8 @@
 			files = (
 				3F6D43FD2A5810AE0069CFFB /* Onboarding.swift in Sources */,
 				3F6D43FF2A58188C0069CFFB /* Home.swift in Sources */,
+				3F6D44062A583EB30069CFFB /* FetchedObjects.swift in Sources */,
+				3F6D44072A583EB30069CFFB /* Persistence.swift in Sources */,
 				3F6D44032A581ED50069CFFB /* UserProfile.swift in Sources */,
 				3F6D44012A5818D70069CFFB /* Menu.swift in Sources */,
 				3F1E42742A576C6F0065E4B3 /* Little_LemonApp.swift in Sources */,
