@@ -31,7 +31,14 @@ struct Menu: View {
         let request = URLRequest(url: url)
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            // TODO: handle response
+            if let data = data {
+                let decoder = JSONDecoder()
+                
+                if let menuList = try? decoder.decode(MenuList.self, from: data) {
+                    // menu list stuff
+                    
+                }
+            }
         }
         
         task.resume()
