@@ -34,6 +34,22 @@ struct Onboarding: View {
                 
                 Image("Logo")
                 
+                VStack {
+                    Text("Little Lemon")
+                    Text("Chicago")
+                    HStack {
+                        Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
+                        Image("Hero image")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 100, alignment: .center)
+                            .clipped()
+                            .cornerRadius(10)
+                    }
+                }
+               
+                
+                
                 TextField("First Name", text: $firstName)
                 TextField("Last Name", text: $lastName)
                 TextField("Email", text: $email)
