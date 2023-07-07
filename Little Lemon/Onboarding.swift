@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+let kFirstName = "first name key"
+let kLastName = "last name key"
+let kEmail = "email key"
+
+
 struct Onboarding: View {
     
     @State var firstName: String = ""
@@ -19,10 +24,24 @@ struct Onboarding: View {
             TextField("First Name", text: $firstName)
             TextField("Last Name", text: $lastName)
             TextField("Email", text: $email)
-        }
             
-    }
+            Button {
+                if (!firstName.isEmpty && !lastName.isEmpty && !email.isEmpty) {
+                    UserDefaults.standard.set(firstName, forKey: kFirstName)
+                    UserDefaults.standard.set(lastName, forKey: kLastName)
+                    UserDefaults.standard.set(email, forKey: kEmail)
+                } else {
+                    // TODO: empty else statement
+                }
+            } label: {
+                Text("Register")
+            }
+            
+            
+        }
         
+    }
+    
 }
 
 struct Onboarding_Previews: PreviewProvider {
