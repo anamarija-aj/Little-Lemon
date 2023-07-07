@@ -21,7 +21,7 @@ struct Menu: View {
             
             TextField("Search menu", text: $searchText)
             
-            FetchedObjects(sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
+            FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                 List {
                     ForEach(dishes) { dish in
                         
