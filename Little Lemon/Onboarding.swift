@@ -32,6 +32,8 @@ struct Onboarding: View {
                     EmptyView()
                 }
                 
+                Image("Logo")
+                
                 TextField("First Name", text: $firstName)
                 TextField("Last Name", text: $lastName)
                 TextField("Email", text: $email)
