@@ -20,6 +20,7 @@ struct Menu: View {
             Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
             
             TextField("Search menu", text: $searchText)
+                .padding(20)
             
             FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                 List {
