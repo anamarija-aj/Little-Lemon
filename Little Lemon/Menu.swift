@@ -17,9 +17,20 @@ struct Menu: View {
             Text("Chicago")
             Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
             
+        FetchedObjects() { (dishes: [Dish]) in
             List {
-                
+                ForEach(dishes) { dish in
+                    HStack {
+                        Text("\(dish.title ?? "") - \(dish.price ?? "")")
+                        AsyncImage(url: URL(string: dish.image ?? ""))
+                            .aspectRatio(contentMode: .fit)
+                    }
+                }
             }
+            
+        }
+            
+            
         }
         .onAppear {
             getMenuData()
