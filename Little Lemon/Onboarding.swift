@@ -11,6 +11,8 @@ let kFirstName = "first name key"
 let kLastName = "last name key"
 let kEmail = "email key"
 
+let kIsLoggedIn = "kIsLoggedIn"
+
 
 struct Onboarding: View {
     
@@ -41,6 +43,7 @@ struct Onboarding: View {
                         UserDefaults.standard.set(email, forKey: kEmail)
                         
                         isLoggedIn = true
+                        UserDefaults.standard.set(true, forKey: "kIsLoggedIn")
                         
                     } else {
                         // TODO: empty else statement
@@ -50,6 +53,11 @@ struct Onboarding: View {
                 }
                 
                 
+            }
+            .onAppear() {
+                if (UserDefaults.standard.bool(forKey: "kIsLoggedIn")) {
+                    isLoggedIn = true
+                }
             }
         }
         

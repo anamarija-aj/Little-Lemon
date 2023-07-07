@@ -13,6 +13,7 @@ struct UserProfile: View {
     let lastName = UserDefaults.standard.string(forKey: "kLastName") ?? ""
     let email = UserDefaults.standard.string(forKey: "kEmail") ?? ""
 
+    @Environment(\.presentationMode) var presentation
     
     var body: some View {
         VStack {
@@ -21,6 +22,17 @@ struct UserProfile: View {
             Text(firstName)
             Text(lastName)
             Text(email)
+            
+            Button {
+                UserDefaults.standard.set(false, forKey: "kIsLoggedIn")
+                self.presentation.wrappedValue.dismiss()
+            } label: {
+                Text("Logout")
+            }
+            
+            Spacer()
+
+            
         }
     }
 }
