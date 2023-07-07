@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-let kFirstName = "first name key"
-let kLastName = "last name key"
-let kEmail = "email key"
+let kFirstName = "kFirstName"
+let kLastName = "kLastName"
+let kEmail = "kEmail"
 
 let kIsLoggedIn = "kIsLoggedIn"
 
