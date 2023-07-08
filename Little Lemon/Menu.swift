@@ -134,7 +134,7 @@ struct Menu: View {
                 Image("profile-image-placeholder")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 25, height: 25, alignment: .center)
+                    .frame(width: 50, height: 50, alignment: .center)
                     .clipped()
             }
             )
