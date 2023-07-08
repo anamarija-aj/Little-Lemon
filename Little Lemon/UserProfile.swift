@@ -40,8 +40,9 @@ struct UserProfile: View {
                 Group {
                     Text("Personal information")
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .fontWeight(.bold)
                         .padding([.leading, .trailing], 20)
-                        .padding(.top, 5)
+                        .padding(.top, 10)
                         .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                     Text("Avatar")
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -231,10 +232,11 @@ struct UserProfile: View {
                 }
                 .padding(.top, 10)
                 
-                
+                Spacer()
                 
                 
             }
+            
             
         }
         
@@ -243,12 +245,12 @@ struct UserProfile: View {
                 Image("Logo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 200, height: 50),
+                .frame(width: 200, height: 45),
             trailing:
                 Image("profile-image-placeholder")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 50, height: 50, alignment: .center)
+                .frame(width: 50, height: 45, alignment: .center)
                 .clipped()
             
         )
