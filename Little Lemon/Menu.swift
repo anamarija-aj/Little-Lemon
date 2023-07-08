@@ -16,8 +16,18 @@ struct Menu: View {
     var body: some View {
         VStack {
             
+            HStack {
+                Image("Logo")
+                    .padding([.leading, .trailing], 60)
+                
+                Image("profile-image-placeholder")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 50, height: 50, alignment: .center)
+                    .clipped()
+                
+            }
             
-            Image("Logo")
             
             HStack {
                 VStack {
