@@ -150,6 +150,32 @@ struct UserProfile: View {
                 
                 
                 
+                HStack {
+                    
+                    Button(action: { /* action for each category */ }) {
+                        Text("Discard changes")
+                            .padding(EdgeInsets(top: 14, leading: 19, bottom: 14, trailing: 19))
+                            .background(Color.white)
+                            .foregroundColor(Color(red: 73/255, green: 94/255, blue: 87/255))
+                        
+                    }
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color(red: 73/255, green: 94/255, blue: 87/255), lineWidth: 1)
+                    )
+                    
+                    Button(action: { /* action for each category */ }) {
+                        Text("Save changes")
+                            .padding(EdgeInsets(top: 14, leading: 19, bottom: 14, trailing: 19))
+                            .background(Color(red: 73/255, green: 94/255, blue: 87/255))
+                            .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
+                            .cornerRadius(10)
+                    }
+                }
+                
+                
+                
+                
             }
             
         }
