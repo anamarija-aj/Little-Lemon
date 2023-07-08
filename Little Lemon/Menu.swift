@@ -27,20 +27,32 @@ struct Menu: View {
                         VStack {
                             Text("Little Lemon")
                                 .foregroundColor(Color(red: 244/255, green: 206/255, blue: 20/255))
+                                .font(.largeTitle)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding([.leading, .trailing], 20)
+                                .padding(.bottom, 3)
                             Text("Chicago")
                                 .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
+                                .font(.title2)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding([.leading, .trailing], 20)
+                                .padding(.bottom, 2)
                             
                             Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
+                                .font(.system(size: 15))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding([.leading, .trailing], 20)
                             
                             
                         }
                         
+                        
                         Image("Hero image")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 100, alignment: .center)
+                            .frame(width: 120, height: 120, alignment: .center)
                             .clipped()
                             .cornerRadius(10)
                     }
@@ -56,7 +68,8 @@ struct Menu: View {
                             .padding(.leading)
                             .cornerRadius(8)
                     }
-                    .padding()
+                    .padding(.top, 10)
+                    //.padding()
                     
                     
                     
@@ -67,6 +80,8 @@ struct Menu: View {
                 Text("ORDER FOR DELIVERY!")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding([.leading, .trailing], 20)
+                    .padding(.top, 10)
+                    .fontWeight(.bold)
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
                         ForEach(["Starters", "Mains", "Desserts", "Drinks"], id: \.self) { category in
@@ -103,6 +118,7 @@ struct Menu: View {
                                 VStack {
                                     Text(dishTitle)
                                         .padding([.top, .bottom], 10)
+                                        .fontWeight(.bold)
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                     Text("$ \(dishPrice)")
                                         .frame(maxWidth: .infinity, alignment: .leading)
