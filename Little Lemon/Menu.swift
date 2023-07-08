@@ -23,41 +23,58 @@ struct Menu: View {
                 Image("profile-image-placeholder")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 50, height: 50, alignment: .center)
+                    .frame(width: 25, height: 25, alignment: .center)
                     .clipped()
                 
             }
             
             
-            HStack {
-                VStack {
-                    Text("Little Lemon")
-                        .foregroundColor(Color(red: 244/255, green: 206/255, blue: 20/255))
-                    Text("Chicago")
-                        .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
+            VStack {
+                HStack {
+                    VStack {
+                        Text("Little Lemon")
+                            .foregroundColor(Color(red: 244/255, green: 206/255, blue: 20/255))
+                        Text("Chicago")
+                            .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
+                        
+                        Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
+                        
+                        
+                    }
                     
-                    Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
-                    
-                    
-                    
+                    Image("Hero image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 100, alignment: .center)
+                        .clipped()
+                        .cornerRadius(10)
                 }
                 
-                Image("Hero image")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .clipped()
-                    .cornerRadius(10)
+                HStack {
+                    Image(systemName: "magnifyingglass.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
+                    TextField("Search menu", text: $searchText)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.leading)
+                        .cornerRadius(8)
+                }
+                .padding()
+                
+                
+                
             }
             .padding()
             .background(Color(red: 73/255, green: 94/255, blue: 87/255))
             
             
-            TextField("Search menu", text: $searchText)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+            
+            
+            
             
             FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                 List {
