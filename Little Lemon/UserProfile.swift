@@ -91,14 +91,16 @@ struct UserProfile: View {
                         .onAppear() {
                             self.tempFirstName = self.firstName
                         }
-                        .padding()
-                        .background(Color.gray.opacity(0.1))
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.top, 2)
+                        .padding(.horizontal, 20)
                         .cornerRadius(2)
                     
                     
                     Text("Last name")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding([.leading, .trailing], 20)
+                        .padding(.top, 2)
                         .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                         .font(.system(size: 13) .bold())
                     
@@ -106,8 +108,9 @@ struct UserProfile: View {
                         .onAppear() {
                             self.tempLastName = self.lastName
                         }
-                        .padding()
-                        .background(Color.gray.opacity(0.1))
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.top, 2)
                         .cornerRadius(5)
                     
                     
@@ -122,8 +125,9 @@ struct UserProfile: View {
                         .onAppear() {
                             self.tempEmail = self.email
                         }
-                        .padding()
-                        .background(Color.gray.opacity(0.1))
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.top, 2)
+                        .padding(.horizontal, 20)
                         .cornerRadius(5)
                     
                     
@@ -134,7 +138,7 @@ struct UserProfile: View {
                 Text("Email notifications")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding([.leading, .trailing], 20)
-                    .padding([.bottom, .top], 5)
+                    .padding([.bottom, .top], 2)
                     .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                     .font(.system(size: 19) .bold())
                 
