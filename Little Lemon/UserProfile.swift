@@ -59,13 +59,12 @@ struct UserProfile: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 50),
             trailing:
-                NavigationLink(destination: UserProfile()) {
                     Image("profile-image-placeholder")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 50, height: 50, alignment: .center)
                         .clipped()
-                }
+                
         )
         
         
