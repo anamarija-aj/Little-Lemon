@@ -124,6 +124,7 @@ struct Menu: View {
                 
                 
             }
+            .scrollContentBackground(.hidden)
             .onAppear {
                 getMenuData()
             }
