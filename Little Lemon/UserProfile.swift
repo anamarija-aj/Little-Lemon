@@ -26,12 +26,42 @@ struct UserProfile: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding([.leading, .trailing, .top], 20)
                     .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                Text("Avatar")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding([.leading, .trailing, .top], 20)
+                    .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                
+                HStack {
+                    Image("profile-image-placeholder")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 100, alignment: .center)
+                        .clipped()
                     
-                Image("profile-image-placeholder")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .clipped()
+                    Button(action: { /* action for each category */ }) {
+                        Text("Change")
+                            .padding(EdgeInsets(top: 9, leading: 14, bottom: 9, trailing: 14))
+                            .background(Color(red: 73/255, green: 94/255, blue: 87/255))
+                            .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
+                            .cornerRadius(10)
+                    }
+                    .padding()
+                    
+                    Button(action: { /* action for each category */ }) {
+                        Text("Remove")
+                            .padding(EdgeInsets(top: 9, leading: 14, bottom: 9, trailing: 14))
+                            .background(.white)
+                            .foregroundColor(Color(red: 73/255, green: 94/255, blue: 87/255))
+                        
+                    }
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 0) // Adjust corner radius if needed
+                            .stroke(Color(red: 73/255, green: 94/255, blue: 87/255), lineWidth: 1)
+                    )
+                }
+                
+                
+                
                 Text(firstName)
                 Text(lastName)
                 Text(email)
@@ -51,8 +81,8 @@ struct UserProfile: View {
                 }
                 .padding([.leading, .trailing])
                 .fullScreenCover(isPresented: $showOnboarding) {
-                                Onboarding()
-                            }
+                    Onboarding()
+                }
                 
                 Spacer()
                 
@@ -67,12 +97,12 @@ struct UserProfile: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 50),
             trailing:
-                    Image("profile-image-placeholder")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 50, height: 50, alignment: .center)
-                        .clipped()
-                
+                Image("profile-image-placeholder")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 50, height: 50, alignment: .center)
+                .clipped()
+            
         )
         
         
