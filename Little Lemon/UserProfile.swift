@@ -54,12 +54,12 @@ struct UserProfile: View {
                         Image("profile-image-placeholder")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 100, alignment: .center)
+                            .frame(width: 60, height: 60, alignment: .center)
                             .clipped()
                         
                         Button(action: { /* action for each category */ }) {
                             Text("Change")
-                                .padding(EdgeInsets(top: 9, leading: 14, bottom: 9, trailing: 14))
+                                .padding(EdgeInsets(top: 7, leading: 12, bottom: 7, trailing: 12))
                                 .background(Color(red: 73/255, green: 94/255, blue: 87/255))
                                 .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
                                 .cornerRadius(10)
@@ -68,7 +68,7 @@ struct UserProfile: View {
                         
                         Button(action: { /* action for each category */ }) {
                             Text("Remove")
-                                .padding(EdgeInsets(top: 9, leading: 14, bottom: 9, trailing: 14))
+                                .padding(EdgeInsets(top: 7, leading: 12, bottom: 7, trailing: 12))
                                 .background(Color.white)
                                 .foregroundColor(Color(red: 73/255, green: 94/255, blue: 87/255))
                             
