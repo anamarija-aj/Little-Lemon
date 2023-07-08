@@ -80,7 +80,7 @@ struct Menu: View {
                         Button(action: { /* action for each category */ }) {
                             Text(category)
                                 .foregroundColor(Color(red: 73/255, green: 94/255, blue: 87/255))
-                                .padding(EdgeInsets(top: 8, leading: 13, bottom: 8, trailing: 13))
+                                .padding(EdgeInsets(top: 9, leading: 14, bottom: 9, trailing: 14))
                                 .background(Color(red: 237/255, green: 239/255, blue: 238/255))
                                 .cornerRadius(10)
                         }
