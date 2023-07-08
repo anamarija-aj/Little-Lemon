@@ -38,12 +38,21 @@ struct Onboarding: View {
                     VStack {
                         Text("Little Lemon")
                             .foregroundColor(Color(red: 244/255, green: 206/255, blue: 20/255))
+                            .font(.largeTitle)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 3)
                         Text("Chicago")
                             .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
+                            .font(.title2)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 2)
                         
                         Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
                             .multilineTextAlignment(.leading)
                             .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
+                            .font(.system(size: 15))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 10)
                         
                         
                         
@@ -52,7 +61,7 @@ struct Onboarding: View {
                     Image("Hero image")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100, alignment: .center)
+                        .frame(width: 120, height: 120, alignment: .center)
                         .clipped()
                         .cornerRadius(10)
                 }
