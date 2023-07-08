@@ -19,6 +19,7 @@
 		3F6D44092A583F680069CFFB /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D44082A583F680069CFFB /* MenuList.swift */; };
 		3F6D440B2A583F830069CFFB /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D440A2A583F830069CFFB /* MenuItem.swift */; };
 		3F6D440E2A584AC40069CFFB /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D440C2A584AC40069CFFB /* ExampleDatabase.xcdatamodeld */; };
+		3F8A40472A59D8A6006B68F3 /* iOSCheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8A40462A59D8A6006B68F3 /* iOSCheckboxToggleStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		3F6D44082A583F680069CFFB /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
 		3F6D440A2A583F830069CFFB /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		3F6D440D2A584AC40069CFFB /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
+		3F8A40462A59D8A6006B68F3 /* iOSCheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCheckboxToggleStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				3F6D44082A583F680069CFFB /* MenuList.swift */,
 				3F6D440A2A583F830069CFFB /* MenuItem.swift */,
 				3F6D44022A581ED50069CFFB /* UserProfile.swift */,
+				3F8A40462A59D8A6006B68F3 /* iOSCheckboxToggleStyle.swift */,
 				3F6D43FC2A5810AE0069CFFB /* Onboarding.swift */,
 				3F6D43FE2A58188C0069CFFB /* Home.swift */,
 				3F6D44002A5818D70069CFFB /* Menu.swift */,
@@ -169,6 +172,7 @@
 				3F6D440E2A584AC40069CFFB /* ExampleDatabase.xcdatamodeld in Sources */,
 				3F6D44032A581ED50069CFFB /* UserProfile.swift in Sources */,
 				3F6D440B2A583F830069CFFB /* MenuItem.swift in Sources */,
+				3F8A40472A59D8A6006B68F3 /* iOSCheckboxToggleStyle.swift in Sources */,
 				3F6D44012A5818D70069CFFB /* Menu.swift in Sources */,
 				3F1E42742A576C6F0065E4B3 /* Little_LemonApp.swift in Sources */,
 			);

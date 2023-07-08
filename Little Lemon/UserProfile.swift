@@ -18,6 +18,13 @@ struct UserProfile: View {
     
     @State var showOnboarding = false
     
+    
+    @State private var orderStatusChecked = false
+    @State private var passwordChangesChecked = false
+    @State private var specialOffersChecked = false
+    @State private var newsletterChecked = false
+    
+    
     var body: some View {
         
         NavigationView {
@@ -85,6 +92,41 @@ struct UserProfile: View {
                     
                 }
                 
+                Text("Email notifications")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding([.leading, .trailing, .top, .bottom], 20)
+                    .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                
+                VStack {
+                    
+                    Toggle(isOn: $orderStatusChecked) {
+                        Text("Order statuses")
+                    }
+                    .toggleStyle(iOSCheckboxToggleStyle())
+                    
+                    
+                    
+                    Toggle(isOn: $passwordChangesChecked) {
+                        Text("Password changes")
+                    }
+                    .toggleStyle(iOSCheckboxToggleStyle())
+                    
+                    
+                    Toggle(isOn: $specialOffersChecked) {
+                        Text("Special offers")
+                    }
+                    .toggleStyle(iOSCheckboxToggleStyle())
+                    
+                    
+                    Toggle(isOn: $newsletterChecked) {
+                        Text("Newsletter")
+                    }
+                    .toggleStyle(iOSCheckboxToggleStyle())
+                    
+                }
+                .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                .padding(.leading, 20)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
                 
                 Button {
