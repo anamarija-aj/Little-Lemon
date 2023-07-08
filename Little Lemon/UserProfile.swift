@@ -167,7 +167,7 @@ struct UserProfile: View {
                 }
                 .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                 .padding(.leading, 20)
-                .padding(.bottom, 30)
+                .padding(.bottom, 10)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 
@@ -225,7 +225,7 @@ struct UserProfile: View {
                             .cornerRadius(10)
                     }
                 }
-                .padding(.top, 17)
+                .padding(.top, 10)
                 
                 
                 
