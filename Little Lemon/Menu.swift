@@ -71,9 +71,28 @@ struct Menu: View {
             .padding()
             .background(Color(red: 73/255, green: 94/255, blue: 87/255))
             
+            Text("ORDER FOR DELIVERY!")
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding([.leading, .trailing], 20)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 10) {
+                    ForEach(["Starters", "Mains", "Desserts", "Drinks"], id: \.self) { category in
+                        Button(action: { /* action for each category */ }) {
+                            Text(category)
+                                .foregroundColor(Color(red: 73/255, green: 94/255, blue: 87/255))
+                                .padding(EdgeInsets(top: 8, leading: 13, bottom: 8, trailing: 13))
+                                .background(Color(red: 237/255, green: 239/255, blue: 238/255))
+                                .cornerRadius(10)
+                        }
+                    }
+                }
+                .padding(.horizontal)
+            }
+            .padding([.leading, .trailing], 20)
+            .padding([.top, .bottom], 10)
             
             
-            
+            Divider().background(Color.black)
             
             
             FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
