@@ -179,7 +179,7 @@ struct UserProfile: View {
                             .cornerRadius(10)
                     }
                 }
-                .padding(.top, 20)
+                .padding(.top, 17)
                 
                 
                 
