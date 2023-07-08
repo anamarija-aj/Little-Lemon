@@ -9,9 +9,16 @@ import SwiftUI
 
 struct UserProfile: View {
     
-    let firstName = UserDefaults.standard.string(forKey: "kFirstName") ?? ""
-    let lastName = UserDefaults.standard.string(forKey: "kLastName") ?? ""
-    let email = UserDefaults.standard.string(forKey: "kEmail") ?? ""
+    var firstName = UserDefaults.standard.string(forKey: "kFirstName") ?? ""
+    var lastName = UserDefaults.standard.string(forKey: "kLastName") ?? ""
+    var email = UserDefaults.standard.string(forKey: "kEmail") ?? ""
+    
+    
+    @State var tempFirstName = ""
+    @State var tempLastName = ""
+    @State var tempEmail = ""
+    
+    
     
     @Environment(\.presentationMode) var presentation
     
@@ -72,28 +79,32 @@ struct UserProfile: View {
                     }
                     
                     
-                    Text("First Name")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding([.leading, .trailing], 20)
-                        .padding(.top, 15)
-                        .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
-                    Text(firstName)
+                    TextField("First Name", text: $tempFirstName)
+                        .onAppear() {
+                            self.tempFirstName = self.firstName
+                        }
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(5)
+                    
+                    TextField("Last Name", text: $tempLastName)
+                        .onAppear() {
+                            self.tempLastName = self.lastName
+                        }
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(5)
+                    
+                    TextField("Email", text: $tempEmail)
+                        .onAppear() {
+                            self.tempEmail = self.email
+                        }
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(5)
                     
                     
-                    Text("Last Name")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding([.leading, .trailing], 20)
-                        .padding(.top, 5)
-                        .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
-                    Text(lastName)
                     
-                    
-                    Text("Email")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding([.leading, .trailing], 20)
-                        .padding(.top, 5)
-                        .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
-                    Text(email)
                     
                 }
                 
@@ -159,7 +170,12 @@ struct UserProfile: View {
                 
                 HStack {
                     
-                    Button(action: { /* action for each category */ }) {
+                    Button(action: {
+                        self.tempFirstName = self.firstName
+                        self.tempLastName = self.lastName
+                        self.tempEmail = self.email
+                        self.endEditing()
+                    }) {
                         Text("Discard changes")
                             .padding(EdgeInsets(top: 14, leading: 19, bottom: 14, trailing: 19))
                             .background(Color.white)
@@ -171,7 +187,13 @@ struct UserProfile: View {
                             .stroke(Color(red: 73/255, green: 94/255, blue: 87/255), lineWidth: 1)
                     )
                     
-                    Button(action: { /* action for each category */ }) {
+                    Button(action: {
+                        
+                        UserDefaults.standard.set(self.tempFirstName, forKey: "kFirstName")
+                        UserDefaults.standard.set(self.tempLastName, forKey: "kLastName")
+                        UserDefaults.standard.set(self.tempEmail, forKey: "kEmail")
+                        self.endEditing()
+                    }) {
                         Text("Save changes")
                             .padding(EdgeInsets(top: 14, leading: 19, bottom: 14, trailing: 19))
                             .background(Color(red: 73/255, green: 94/255, blue: 87/255))
@@ -205,6 +227,10 @@ struct UserProfile: View {
         
         
         
+    }
+    
+    private func endEditing() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
