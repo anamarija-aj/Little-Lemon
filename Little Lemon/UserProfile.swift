@@ -48,6 +48,7 @@ struct UserProfile: View {
                         .padding([.leading, .trailing], 20)
                         .padding(.top, 5)
                         .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                        .font(.system(size: 13) .bold())
                     
                     HStack {
                         Image("profile-image-placeholder")
@@ -83,6 +84,7 @@ struct UserProfile: View {
                         .padding([.leading, .trailing], 20)
                         .padding(.top, 2)
                         .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                        .font(.system(size: 13) .bold())
                     
                     
                     TextField("First Name", text: $tempFirstName)
@@ -98,6 +100,7 @@ struct UserProfile: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding([.leading, .trailing], 20)
                         .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                        .font(.system(size: 13) .bold())
                     
                     TextField("Last Name", text: $tempLastName)
                         .onAppear() {
@@ -113,6 +116,7 @@ struct UserProfile: View {
                         .padding([.leading, .trailing], 20)
                         .padding(.top, 2)
                         .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                        .font(.system(size: 13) .bold())
                     
                     TextField("Email", text: $tempEmail)
                         .onAppear() {
