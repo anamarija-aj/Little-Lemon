@@ -33,11 +33,13 @@ struct UserProfile: View {
                 Group {
                     Text("Personal information")
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding([.leading, .trailing, .top], 20)
+                        .padding([.leading, .trailing], 20)
+                        .padding(.top, 5)
                         .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                     Text("Avatar")
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding([.leading, .trailing, .top], 20)
+                        .padding([.leading, .trailing], 20)
+                        .padding(.top, 5)
                         .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                     
                     HStack {
@@ -72,21 +74,24 @@ struct UserProfile: View {
                     
                     Text("First Name")
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding([.leading, .trailing, .top], 20)
+                        .padding([.leading, .trailing], 20)
+                        .padding(.top, 15)
                         .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                     Text(firstName)
                     
                     
                     Text("Last Name")
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding([.leading, .trailing, .top], 20)
+                        .padding([.leading, .trailing], 20)
+                        .padding(.top, 5)
                         .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                     Text(lastName)
                     
                     
                     Text("Email")
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding([.leading, .trailing, .top], 20)
+                        .padding([.leading, .trailing], 20)
+                        .padding(.top, 5)
                         .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                     Text(email)
                     
