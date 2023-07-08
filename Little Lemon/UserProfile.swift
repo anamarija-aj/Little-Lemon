@@ -15,6 +15,9 @@ struct UserProfile: View {
     
     @Environment(\.presentationMode) var presentation
     
+    
+    @State var showOnboarding = false
+    
     var body: some View {
         
         NavigationView {
@@ -35,7 +38,9 @@ struct UserProfile: View {
                 
                 Button {
                     UserDefaults.standard.set(false, forKey: "kIsLoggedIn")
+                    self.showOnboarding = true
                     self.presentation.wrappedValue.dismiss()
+                    
                 } label: {
                     Text("Logout")
                         .foregroundColor(.black)
@@ -45,6 +50,9 @@ struct UserProfile: View {
                         .cornerRadius(5)
                 }
                 .padding([.leading, .trailing])
+                .fullScreenCover(isPresented: $showOnboarding) {
+                                Onboarding()
+                            }
                 
                 Spacer()
                 
