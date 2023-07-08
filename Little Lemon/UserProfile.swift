@@ -21,7 +21,7 @@ struct UserProfile: View {
     var body: some View {
         
         NavigationView {
-            ScrollView {
+         
                 VStack {
                     Text("Personal information")
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -104,7 +104,7 @@ struct UserProfile: View {
                     
                     
                 }
-            }
+            
         }
         
         .navigationBarItems(
