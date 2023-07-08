@@ -34,25 +34,60 @@ struct Onboarding: View {
                 
                 Image("Logo")
                 
-                VStack {
-                    Text("Little Lemon")
-                    Text("Chicago")
-                    HStack {
+                HStack {
+                    VStack {
+                        Text("Little Lemon")
+                            .foregroundColor(Color(red: 244/255, green: 206/255, blue: 20/255))
+                        Text("Chicago")
+                            .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
+                        
                         Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
-                        Image("Hero image")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 100, alignment: .center)
-                            .clipped()
-                            .cornerRadius(10)
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(Color(red: 237/255, green: 239/255, blue: 238/255))
+                        
+                        
+                        
                     }
+                    
+                    Image("Hero image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 100, alignment: .center)
+                        .clipped()
+                        .cornerRadius(10)
                 }
-               
+                .padding()
+                .background(Color(red: 73/255, green: 94/255, blue: 87/255))
                 
                 
-                TextField("First Name", text: $firstName)
-                TextField("Last Name", text: $lastName)
-                TextField("Email", text: $email)
+                
+                Text("First Name *")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding([.leading, .trailing, .top], 20)
+                    .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                
+                TextField("Enter First Name", text: $firstName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                
+                Text("Last Name *")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding([.leading, .trailing, .top], 20)
+                    .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                TextField("Enter Last Name", text: $lastName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                
+                Text("Email *")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding([.leading, .trailing, .top], 20)
+                    .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                TextField("Enter Email", text: $email)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                 
                 Button {
                     if (!firstName.isEmpty && !lastName.isEmpty && !email.isEmpty) {
@@ -68,10 +103,18 @@ struct Onboarding: View {
                     }
                 } label: {
                     Text("Register")
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color(red: 244/255, green: 206/255, blue: 20/255))
+                        .cornerRadius(5)
                 }
+                .padding([.leading, .trailing])
+                
                 
                 
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .onAppear {
                 if (UserDefaults.standard.bool(forKey: "kIsLoggedIn")) {
                     isLoggedIn = true
