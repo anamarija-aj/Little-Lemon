@@ -99,7 +99,8 @@ struct UserProfile: View {
                 
                 Text("Email notifications")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding([.leading, .trailing, .top, .bottom], 20)
+                    .padding([.leading, .trailing, .top], 20)
+                    .padding(.bottom, 5)
                     .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                 
                 VStack {
@@ -131,6 +132,7 @@ struct UserProfile: View {
                 }
                 .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                 .padding(.leading, 20)
+                .padding(.bottom, 30)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 
@@ -177,6 +179,7 @@ struct UserProfile: View {
                             .cornerRadius(10)
                     }
                 }
+                .padding(.top, 20)
                 
                 
                 
