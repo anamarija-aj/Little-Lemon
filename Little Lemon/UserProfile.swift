@@ -20,7 +20,15 @@ struct UserProfile: View {
         NavigationView {
             VStack {
                 Text("Personal information")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding([.leading, .trailing, .top], 20)
+                    .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                    
                 Image("profile-image-placeholder")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100, alignment: .center)
+                    .clipped()
                 Text(firstName)
                 Text(lastName)
                 Text(email)
