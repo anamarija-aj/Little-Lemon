@@ -107,12 +107,13 @@ struct Menu: View {
                         
                         HStack {
                             
-                            HStack {
+                            VStack {
                                 Text(dishTitle)
-                                Spacer()
+                                    .padding([.top, .bottom], 10)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                                 Text("$ \(dishPrice)")
-                            }.padding(10)
-                            
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
                             Spacer()
                             AsyncImage(url: URL(string: dishImage)) { image in
                                 image
