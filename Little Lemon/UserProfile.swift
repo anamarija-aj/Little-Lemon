@@ -21,8 +21,9 @@ struct UserProfile: View {
     var body: some View {
         
         NavigationView {
-         
-                VStack {
+            
+            VStack {
+                Group {
                     Text("Personal information")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding([.leading, .trailing, .top], 20)
@@ -82,28 +83,32 @@ struct UserProfile: View {
                         .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                     Text(email)
                     
-                    Button {
-                        UserDefaults.standard.set(false, forKey: "kIsLoggedIn")
-                        self.showOnboarding = true
-                        self.presentation.wrappedValue.dismiss()
-                        
-                    } label: {
-                        Text("Logout")
-                            .foregroundColor(.black)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color(red: 244/255, green: 206/255, blue: 20/255))
-                            .cornerRadius(5)
-                    }
-                    .padding([.leading, .trailing])
-                    .fullScreenCover(isPresented: $showOnboarding) {
-                        Onboarding()
-                    }
-                    
-                    
-                    
-                    
                 }
+                
+                
+                
+                Button {
+                    UserDefaults.standard.set(false, forKey: "kIsLoggedIn")
+                    self.showOnboarding = true
+                    self.presentation.wrappedValue.dismiss()
+                    
+                } label: {
+                    Text("Logout")
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color(red: 244/255, green: 206/255, blue: 20/255))
+                        .cornerRadius(5)
+                }
+                .padding([.leading, .trailing])
+                .fullScreenCover(isPresented: $showOnboarding) {
+                    Onboarding()
+                }
+                
+                
+                
+                
+            }
             
         }
         
