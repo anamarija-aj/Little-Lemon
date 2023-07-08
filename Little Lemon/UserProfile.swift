@@ -78,29 +78,48 @@ struct UserProfile: View {
                         )
                     }
                     
+                    Text("First name")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding([.leading, .trailing], 20)
+                        .padding(.top, 2)
+                        .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
+                    
                     
                     TextField("First Name", text: $tempFirstName)
                         .onAppear() {
                             self.tempFirstName = self.firstName
                         }
                         .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(5)
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(2)
+                    
+                    
+                    Text("Last name")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding([.leading, .trailing], 20)
+                        .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                     
                     TextField("Last Name", text: $tempLastName)
                         .onAppear() {
                             self.tempLastName = self.lastName
                         }
                         .padding()
-                        .background(Color.gray.opacity(0.2))
+                        .background(Color.gray.opacity(0.1))
                         .cornerRadius(5)
+                    
+                    
+                    Text("Email")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding([.leading, .trailing], 20)
+                        .padding(.top, 2)
+                        .foregroundColor(Color(red: 51/255, green: 51/255, blue: 51/255))
                     
                     TextField("Email", text: $tempEmail)
                         .onAppear() {
                             self.tempEmail = self.email
                         }
                         .padding()
-                        .background(Color.gray.opacity(0.2))
+                        .background(Color.gray.opacity(0.1))
                         .cornerRadius(5)
                     
                     
